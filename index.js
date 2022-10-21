@@ -1,11 +1,15 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const employee = require("./lib/employee");
+const engineer = require("./lib/engineer");
+const intern = require("./lib/intern");
+const manager = require("./lib/manager");
 
 const questions = [
   {
     type: "input",
     message: "Enter team manager's name",
-    name: "manager",
+    name: "managerName",
   },
   {
     type: "input",
@@ -30,3 +34,12 @@ const questions = [
     choices: ["Add engineer", "Add intern", "Finish building my team"],
   },
 ];
+
+function init() {
+    inquirer.prompt(questions)
+    .then((answers) => {
+        if (questions.next === "Add engineer") {
+            return 
+        }
+    }
+    )}

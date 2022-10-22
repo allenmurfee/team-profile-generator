@@ -6,16 +6,15 @@ const intern = require("./lib/intern");
 const manager = require("./lib/manager");
 const generate = require("./generate");
 
-function init(questions) {
+function start(questions) {
   inquirer.prompt(questions).then((answers) => {
     if (answers.next === "Add engineer") {
-      return init(engineer.engineerQuestions);
+      return start(engineer.engineerQuestions);
     } else if (answers.next === "Add intern") {
-      return init(intern.internQuestions);
+      return start(intern.internQuestions);
     } else {
-      return;
+      write("./dist/index.html", answers);
     }
-    write("./dist/index.html", answers);
   });
 }
 
@@ -25,4 +24,4 @@ function write(fileName, answers) {
   });
 }
 
-init(manager.managerQuestions);
+start(manager.managerQuestions);

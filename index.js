@@ -59,20 +59,19 @@ function start(questions) {
       } else if (answers.next === "Add intern") {
         return start(intern.internQuestions);
       } else {
-        // write("new.html", questionAnswers);
-        console.log(questionAnswers);
+        write("new.html", questionAnswers);
       }
     } else {
-      // write("new.html", questionAnswers);
-      console.log(questionAnswers);
+      write("new.html", questionAnswers);
     }
   });
 }
 
-// function write(fileName, answers) {
-//   return fs.writeFile(fileName, generate.generateCards(answers), (err) => {
-//     return err ? console.log("Error.") : console.log("Success!");
-//   });
-// }
+function write(fileName, answers) {
+  return fs.writeFile(fileName, generate.generateCards(answers), (err) => {
+    return err ? console.log("Error.") : console.log("Success!");
+  });
+}
 
+//Prompt questions
 start(manager.managerQuestions);

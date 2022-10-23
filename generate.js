@@ -5,4 +5,4 @@ function generateCards(answers) {
 }
 
 
-module.exports = { generate };
+module.exports = { generateCards };

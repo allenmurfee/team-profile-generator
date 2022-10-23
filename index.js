@@ -14,7 +14,7 @@ function start(questions) {
     if (firstQuestion) {
       firstQuestion = false;
       questionAnswers.push(
-        new Manager(
+        new manager.Manager(
           answers.managerName,
           answers.managerID,
           answers.managerEmail,
@@ -22,40 +22,60 @@ function start(questions) {
         )
       );
       if (answers.next === "Add engineer") {
+        console.log("add engineer");
         return start(engineer.engineerQuestions);
       } else if (answers.next === "Add intern") {
         return start(intern.internQuestions);
       }
-    } else if (answers.next === "Add engineer") {
+    }
+    if (answers.engineerGitHub) {
+      console.log("add engineer working");
       questionAnswers.push(
-        new Engineer(
+        new engineer.Engineer(
           answers.engineerName,
           answers.engineerID,
           answers.engineerEmail,
           answers.engineerGitHub
         )
       );
-      return start(engineer.engineerQuestions);
-    } else if (answers.next === "Add intern") {
+      if (answers.next === "Add engineer") {
+        console.log("add engineer");
+        return start(engineer.engineerQuestions);
+      } else if (answers.next === "Add intern") {
+        return start(intern.internQuestions);
+      } else {
+        // write("new.html", questionAnswers);
+        console.log(questionAnswers);
+      }
+    } else if (answers.internSchool) {
       questionAnswers.push(
-        new Intern(
+        new intern.Intern(
           answers.internName,
           answers.internID,
           answers.internEmail,
           answers.internSchool
         )
       );
-      return start(intern.internQuestions);
+      if (answers.next === "Add engineer") {
+        console.log("add engineer");
+        return start(engineer.engineerQuestions);
+      } else if (answers.next === "Add intern") {
+        return start(intern.internQuestions);
+      } else {
+        // write("new.html", questionAnswers);
+        console.log(questionAnswers);
+      }
     } else {
-      write("./dist/new.html", questionAnswers);
+      // write("new.html", questionAnswers);
+      console.log(questionAnswers);
     }
   });
 }
 
-function write(fileName, answers) {
-  return fs.writeFile(fileName, generate.generateCards(answers), (err) => {
-    return err ? console.log("Error.") : console.log("Success!");
-  });
-}
+// function write(fileName, answers) {
+//   return fs.writeFile(fileName, generate.generateCards(answers), (err) => {
+//     return err ? console.log("Error.") : console.log("Success!");
+//   });
+// }
 
 start(manager.managerQuestions);

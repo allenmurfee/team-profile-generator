@@ -22,14 +22,12 @@ function start(questions) {
         )
       );
       if (answers.next === "Add engineer") {
-        console.log("add engineer");
         return start(engineer.engineerQuestions);
       } else if (answers.next === "Add intern") {
         return start(intern.internQuestions);
       }
     }
     if (answers.engineerGitHub) {
-      console.log("add engineer working");
       questionAnswers.push(
         new engineer.Engineer(
           answers.engineerName,
@@ -39,7 +37,6 @@ function start(questions) {
         )
       );
       if (answers.next === "Add engineer") {
-        console.log("add engineer");
         return start(engineer.engineerQuestions);
       } else if (answers.next === "Add intern") {
         return start(intern.internQuestions);

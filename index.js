@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const fs = require("fs");
+// const fs = require("fs");
 const employee = require("./lib/employee");
 const engineer = require("./lib/engineer");
 const intern = require("./lib/intern");
@@ -22,9 +22,9 @@ function start(questions) {
         )
       );
       if (answers.next === "Add engineer") {
-        return start(engineer.engineerQuestions);
+        start(engineer.engineerQuestions);
       } else if (answers.next === "Add intern") {
-        return start(intern.internQuestions);
+        start(intern.internQuestions);
       }
     }
     if (answers.engineerGitHub) {
@@ -37,12 +37,11 @@ function start(questions) {
         )
       );
       if (answers.next === "Add engineer") {
-        return start(engineer.engineerQuestions);
+        start(engineer.engineerQuestions);
       } else if (answers.next === "Add intern") {
-        return start(intern.internQuestions);
+        start(intern.internQuestions);
       } else {
-        // write("new.html", questionAnswers);
-        console.log(questionAnswers);
+        generate.generateCards(JSON.stringify(questionAnswers));
       }
     } else if (answers.internSchool) {
       questionAnswers.push(
@@ -54,22 +53,13 @@ function start(questions) {
         )
       );
       if (answers.next === "Add engineer") {
-        console.log("add engineer");
-        return start(engineer.engineerQuestions);
+        start(engineer.engineerQuestions);
       } else if (answers.next === "Add intern") {
-        return start(intern.internQuestions);
+        start(intern.internQuestions);
       } else {
-        write("new.html", questionAnswers);
+        generate.generateCards(JSON.stringify(questionAnswers));
       }
-    } else {
-      write("new.html", questionAnswers);
     }
-  });
-}
-
-function write(fileName, answers) {
-  return fs.writeFile(fileName, generate.generateCards(answers), (err) => {
-    return err ? console.log("Error.") : console.log("Success!");
   });
 }
 

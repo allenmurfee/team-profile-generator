@@ -25,6 +25,8 @@ function start(questions) {
         start(engineer.engineerQuestions);
       } else if (answers.next === "Add intern") {
         start(intern.internQuestions);
+      } else {
+        generate.generateCards(JSON.stringify(questionAnswers));
       }
     }
     if (answers.engineerGitHub) {

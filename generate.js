@@ -9,16 +9,16 @@ function generateCards(answers) {
   const isEng = team.filter((key) => key.engineerGitHub);
   const isInt = team.filter((key) => key.internSchool);
   var managerCard = `<div class="card col-4" style="width: 18rem">
-    //           <h3>${isManager.name}</h3>
-    //           <div class="card-body">
-    //             <h5 class="card-title"></h5>
-    //             <ul class="list-group list-group-flush">
-    //                 <li class="list-group-item">ID: ${isManager.id}</li>
-    //                 <li class="list-group-item">Email: ${isManager.email}</li>
-    //                 <li class="list-group-item">Office number: ${isManager.managerOfficeNum}</li>
-    //               </ul>
-    //           </div>
-    //         </div>`;
+               <h3>${isManager.name}</h3>
+               <div class="card-body">
+                 <h5 class="card-title"></h5>
+                 <ul class="list-group list-group-flush">
+                     <li class="list-group-item">ID: ${isManager.id}</li>
+                     <li class="list-group-item">Email: ${isManager.email}</li>
+                     <li class="list-group-item">Office number: ${isManager.managerOfficeNum}</li>
+                   </ul>
+               </div>
+             </div>`;
 
   if ("engineerGitHub" in team) {
     for (let i = 0; i < isEng.length; i++) {

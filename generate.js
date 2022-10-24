@@ -11,14 +11,14 @@ function generateCards(answers) {
   // console.log(isEng);
   var isInt = team.filter((key) => key.internSchool);
   // console.log(isInt);
-  var managerCard = `<div class="card col-4" style="width: 18rem">
-               <h3>${isManager.name}</h3>
+  const managerCard = `<div class="card col-4" style="width: 18rem">
+               <h3>${isManager[0].name}</h3>
                <div class="card-body">
                  <h5 class="card-title"></h5>
                  <ul class="list-group list-group-flush">
-                     <li class="list-group-item">ID: ${isManager.id}</li>
-                     <li class="list-group-item">Email: ${isManager.email}</li>
-                     <li class="list-group-item">Office number: ${isManager.managerOfficeNum}</li>
+                     <li class="list-group-item">ID: ${isManager[0].id}</li>
+                     <li class="list-group-item">Email: ${isManager[0].email}</li>
+                     <li class="list-group-item">Office number: ${isManager[0].managerOfficeNum}</li>
                    </ul>
                </div>
              </div>`;

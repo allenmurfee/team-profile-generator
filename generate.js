@@ -11,14 +11,14 @@ function generateCards(answers) {
   // console.log(isEng);
   var isInt = team.filter((key) => key.internSchool);
   // console.log(isInt);
-  const managerCard = `<div class="card col-sm-3 col-m-3 col-lg-3 m-3" style="width: 18rem">
+  const managerCard = `<div class="card col-sm-3 col-m-3 col-lg-3 m-3 bg-light" style="width: 18rem">
                <h3>${isManager[0].name}</h3>
-               <div class="card-body">
+               <div class="card-bodybg-light">
                  <h5 class="card-title"></h5>
                  <ul class="list-group list-group-flush">
-                     <li class="list-group-item">ID: ${isManager[0].id}</li>
-                     <li class="list-group-item">Email: <a href="mailto:${isManager[0].email}">${isManager[0].email}</a></li>
-                     <li class="list-group-item">Office number: ${isManager[0].managerOfficeNum}</li>
+                     <li class="list-group-item bg-light">ID: ${isManager[0].id}</li>
+                     <li class="list-group-item bg-light">Email: <a href="mailto:${isManager[0].email}">${isManager[0].email}</a></li>
+                     <li class="list-group-item bg-light">Office number: ${isManager[0].managerOfficeNum}</li>
                    </ul>
                </div>
              </div>`;
@@ -26,14 +26,14 @@ function generateCards(answers) {
   if (isEng.length >= 1) {
     for (let i = 0; i < isEng.length; i++) {
       // console.log(isEng[i].name)
-      engineerCards.push(`<div class="card col-sm-3 col-m-3 col-lg-3 m-3" style="width: 18rem">
+      engineerCards.push(`<div class="card col-sm-3 col-m-3 col-lg-3 m-3 bg-light" style="width: 18rem">
     <h3>${isEng[i].name}</h3>
-    <div class="card-body">
+    <div class="card-body bg-light">
       <h5 class="card-title"></h5>
       <ul class="list-group list-group-flush">
-          <li class="list-group-item">ID: ${isEng[i].id}</li>
-          <li class="list-group-item">Email: <a href="mailto:${isEng[i].email}">${isEng[i].email}</a></li>
-          <li class="list-group-item">GitHub: <a href="https://github.com/${isEng[i].engineerGitHub}">${isEng[i].engineerGitHub}</a></li>
+          <li class="list-group-item bg-light">ID: ${isEng[i].id}</li>
+          <li class="list-group-item bg-light">Email: <a href="mailto:${isEng[i].email}">${isEng[i].email}</a></li>
+          <li class="list-group-item bg-light">GitHub: <a href="https://github.com/${isEng[i].engineerGitHub}">${isEng[i].engineerGitHub}</a></li>
         </ul>
     </div>
   </div>`);
@@ -41,14 +41,14 @@ function generateCards(answers) {
   }
   if (isInt.length >= 1) {
     for (let i = 0; i < isInt.length; i++) {
-      internCards.push(`<div class="card col-sm-3 col-m-3 col-lg-3 m-3" style="width: 18rem">
+      internCards.push(`<div class="card col-sm-3 col-m-3 col-lg-3 m-3 bg-light" style="width: 18rem">
       <h3>${isInt[i].name}</h3>
-      <div class="card-body">
+      <div class="card-body bg-light">
         <h5 class="card-title"></h5>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: ${isInt[i].id}</li>
-            <li class="list-group-item">Email: <a href="mailto:${isInt[i].email}">${isInt[i].email}</a></li>
-            <li class="list-group-item">School: ${isInt[i].internSchool}</li>
+            <li class="list-group-item bg-light">ID: ${isInt[i].id}</li>
+            <li class="list-group-item bg-light">Email: <a href="mailto:${isInt[i].email}">${isInt[i].email}</a></li>
+            <li class="list-group-item bg-light">School: ${isInt[i].internSchool}</li>
           </ul>
       </div>
     </div>`);

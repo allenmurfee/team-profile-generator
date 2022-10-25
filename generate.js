@@ -11,7 +11,7 @@ function generateCards(answers) {
   // console.log(isEng);
   var isInt = team.filter((key) => key.internSchool);
   // console.log(isInt);
-  const managerCard = `<div class="card col" style="width: 18rem">
+  const managerCard = `<div class="card col-sm-3 col-m-3 col-lg-3 m-3" style="width: 18rem">
                <h3>${isManager[0].name}</h3>
                <div class="card-body">
                  <h5 class="card-title"></h5>
@@ -26,7 +26,7 @@ function generateCards(answers) {
   if (isEng.length >= 1) {
     for (let i = 0; i < isEng.length; i++) {
       // console.log(isEng[i].name)
-      engineerCards.push(`<div class="card col" style="width: 18rem">
+      engineerCards.push(`<div class="card col-sm-3 col-m-3 col-lg-3 m-3" style="width: 18rem">
     <h3>${isEng[i].name}</h3>
     <div class="card-body">
       <h5 class="card-title"></h5>
@@ -40,9 +40,8 @@ function generateCards(answers) {
     }
   }
   if (isInt.length >= 1) {
-    console.log("intern if working");
     for (let i = 0; i < isInt.length; i++) {
-      internCards.push(`<div class="card col" style="width: 18rem">
+      internCards.push(`<div class="card col-sm-3 col-m-3 col-lg-3 m-3" style="width: 18rem">
       <h3>${isInt[i].name}</h3>
       <div class="card-body">
         <h5 class="card-title"></h5>
@@ -81,7 +80,7 @@ function generateCards(answers) {
 
       <main>
         <div class="container-lg w-75 d-flex justify-content-center">
-          <div class="row">
+          <div class="row d-flex justify-content-center">
               ${managerCard}
               ${engineerCards.join(" ")}
               ${internCards.join(" ")}

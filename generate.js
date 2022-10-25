@@ -17,7 +17,7 @@ function generateCards(answers) {
                  <h5 class="card-title"></h5>
                  <ul class="list-group list-group-flush">
                      <li class="list-group-item">ID: ${isManager[0].id}</li>
-                     <li class="list-group-item">Email: ${isManager[0].email}</li>
+                     <li class="list-group-item">Email: <a href="mailto:${isManager[0].email}">${isManager[0].email}</a></li>
                      <li class="list-group-item">Office number: ${isManager[0].managerOfficeNum}</li>
                    </ul>
                </div>
@@ -32,8 +32,8 @@ function generateCards(answers) {
       <h5 class="card-title"></h5>
       <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${isEng[i].id}</li>
-          <li class="list-group-item">Email: ${isEng[i].email}</li>
-          <li class="list-group-item">GitHub: ${isEng[i].engineerGitHub}</li>
+          <li class="list-group-item">Email: <a href="mailto:${isEng[i].email}">${isEng[i].email}</a></li>
+          <li class="list-group-item">GitHub: <a href="https://github.com/${isEng[i].engineerGitHub}">${isEng[i].engineerGitHub}</a></li>
         </ul>
     </div>
   </div>`);
@@ -48,7 +48,7 @@ function generateCards(answers) {
         <h5 class="card-title"></h5>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">ID: ${isInt[i].id}</li>
-            <li class="list-group-item">Email: ${isInt[i].email}</li>
+            <li class="list-group-item">Email: <a href="mailto:${isInt[i].email}">${isInt[i].email}</a></li>
             <li class="list-group-item">School: ${isInt[i].internSchool}</li>
           </ul>
       </div>
@@ -104,7 +104,7 @@ function generateCards(answers) {
 
   console.log(html);
 
-  write("new.html", html);
+  write("./dist/new.html", html);
 }
 
 function write(fileName, answers) {

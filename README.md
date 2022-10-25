@@ -16,7 +16,7 @@ After installing the GitHub repository, right click on the "index.js" file in VS
 
 ![Project screenshot](./assets/screenshot.png)
 
-Additionally, here is a tutorial video to demonstrate how the application works.
+Additionally, here is a [tutorial video](./assets/Recording.mov) to demonstrate how the application works.
 
 ## Credits
 
